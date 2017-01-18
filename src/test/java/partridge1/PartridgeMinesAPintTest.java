@@ -30,42 +30,36 @@ public class PartridgeMinesAPintTest {
     @Test
     public void testSingleTerm() throws Exception {
         assertThat(PartridgeMinesAPint.of(Collections.singletonList("Lynn")))
-                .endsWith("!")
-                .doesNotEndWith("!!");
+                .endsWith("Pint!");
     }
 
     @Test
     public void testTwoTerms() throws Exception {
         assertThat(PartridgeMinesAPint.of(Arrays.asList("Lynn", "PearTree")))
-                .endsWith("!!")
-                .doesNotEndWith("!!!");
+                .endsWith("Pint!!");
     }
 
     @Test
     public void testTwoLynns() throws Exception {
         assertThat(PartridgeMinesAPint.of(Arrays.asList("Lynn", "Lynn")))
-                .endsWith("!!")
-                .doesNotEndWith("!!!");
+                .endsWith("Pint!!");
     }
 
     @Test
     public void testThreeTerms() throws Exception {
         assertThat(PartridgeMinesAPint.of(Arrays.asList("Partridge", "PearTree", "Chat")))
-                .endsWith("!!!")
-                .doesNotEndWith("!!!!");
+                .endsWith("Pint!!!");
     }
 
     @Test
     public void testAllTheTerms() throws Exception {
         assertThat(PartridgeMinesAPint.of(ALL_THE_PARTRIDGE_TERMS))
-                .endsWith("!!!!!!!!")
-                .doesNotEndWith("!!!!!!!!!");
+                .endsWith("Pint!!!!!!!!");
     }
 
     @Test
     public void testSamePartridgeTermAppearsMultipleTimes() throws Exception {
         assertThat(PartridgeMinesAPint.of(Arrays.asList("PearTree", "PearTree")))
-                .endsWith("!!")
-                .doesNotEndWith("!!!");
+                .endsWith("Pint!!");
     }
 }
