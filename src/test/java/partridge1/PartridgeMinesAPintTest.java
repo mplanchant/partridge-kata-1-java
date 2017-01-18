@@ -61,4 +61,11 @@ public class PartridgeMinesAPintTest {
                 .endsWith("!!!!!!!!")
                 .doesNotEndWith("!!!!!!!!!");
     }
+
+    @Test
+    public void testSamePartridgeTermAppearsMultipleTimes() throws Exception {
+        assertThat(PartridgeMinesAPint.of(Arrays.asList("PearTree", "PearTree")))
+                .endsWith("!!")
+                .doesNotEndWith("!!!");
+    }
 }
