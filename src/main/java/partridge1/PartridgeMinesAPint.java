@@ -1,8 +1,13 @@
 package partridge1;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import static java.lang.Math.toIntExact;
+
 
 public final class PartridgeMinesAPint {
 
@@ -11,16 +16,8 @@ public final class PartridgeMinesAPint {
 
     public static String of(List<String> terms) {
         StringBuilder minesAPint = new StringBuilder("Mine's a Pint");
-        boolean termFound = false;
-
-        for (String term : terms) {
-            if (PARTRIDGE_TERMS.contains(term)) {
-                termFound = true;
-                minesAPint.append("!");
-            }
-        }
-
-        return termFound ? minesAPint.toString() : "Lynn, I've pierced my foot on a spike!!";
+        long noOfTerms = terms.stream().filter(PARTRIDGE_TERMS::contains).count();
+        return noOfTerms > 0 ? minesAPint.append(StringUtils.repeat("!", toIntExact(noOfTerms))).toString() : "Lynn, I've pierced my foot on a spike!!";
     }
 
 }
