@@ -12,15 +12,19 @@ public class PartridgeMinesAPintTest {
 
     private static final List<String> EMPTY_LIST = Collections.emptyList();
     private static final List<String> NO_PARTRIDGE_TERMS = Arrays.asList("BLUE", "RED", "PINK", "GREEN");
+    private static final List<String> ALL_THE_PARTRIDGE_TERMS
+            = Arrays.asList("Partridge", "PearTree", "Chat", "Dan", "Toblerone", "Lynn", "AlphaPapa", "Nomad");
 
     @Test
     public void testEmptyList() throws Exception {
-        assertThat(PartridgeMinesAPint.of(EMPTY_LIST)).isEqualTo("Lynn, I've pierced my foot on a spike!!");
+        assertThat(PartridgeMinesAPint.of(EMPTY_LIST))
+                .isEqualTo("Lynn, I've pierced my foot on a spike!!");
     }
 
     @Test
     public void testNoPartridgeTerms() throws Exception {
-        assertThat(PartridgeMinesAPint.of(NO_PARTRIDGE_TERMS)).isEqualTo("Lynn, I've pierced my foot on a spike!!");
+        assertThat(PartridgeMinesAPint.of(NO_PARTRIDGE_TERMS))
+                .isEqualTo("Lynn, I've pierced my foot on a spike!!");
     }
 
     @Test
@@ -53,7 +57,7 @@ public class PartridgeMinesAPintTest {
 
     @Test
     public void testAllTheTerms() throws Exception {
-        assertThat(PartridgeMinesAPint.of(Arrays.asList("Partridge", "PearTree", "Chat", "Dan", "Toblerone", "Lynn", "AlphaPapa", "Nomad")))
+        assertThat(PartridgeMinesAPint.of(ALL_THE_PARTRIDGE_TERMS))
                 .endsWith("!!!!!!!!")
                 .doesNotEndWith("!!!!!!!!!");
     }
