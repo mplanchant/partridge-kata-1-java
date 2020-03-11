@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mplanchant/partridge-kata-1-java.svg?branch=master)](https://travis-ci.com/mplanchant/partridge-kata-1-java)
+
 Given an array of terms, if any of those terms relate to Alan Partridge, return Mine's a Pint!
 
 The number of ! after the t should be determined by the number of Alan related terms you find in the provided array (x). The related terms are:
